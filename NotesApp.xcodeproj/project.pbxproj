@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FB438F60666C5AC33CC6DE8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E49C018984927E4CB98F0E4 /* libPods.a */; };
 		41ED8D671B922866005FE666 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8D661B922866005FE666 /* main.m */; };
 		41ED8D6A1B922866005FE666 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8D691B922866005FE666 /* AppDelegate.m */; };
 		41ED8D6D1B922866005FE666 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8D6C1B922866005FE666 /* MasterViewController.m */; };
@@ -15,6 +16,7 @@
 		41ED8D751B922866005FE666 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ED8D741B922866005FE666 /* Images.xcassets */; };
 		41ED8D781B922866005FE666 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED8D761B922866005FE666 /* LaunchScreen.xib */; };
 		41ED8D841B922867005FE666 /* NotesAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8D831B922867005FE666 /* NotesAppTests.m */; };
+		41ED8D9B1B922EE1005FE666 /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8D9A1B922EE1005FE666 /* NoteModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,12 @@
 		41ED8D7D1B922867005FE666 /* NotesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41ED8D821B922867005FE666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41ED8D831B922867005FE666 /* NotesAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesAppTests.m; sourceTree = "<group>"; };
+		41ED8D911B922CC9005FE666 /* PrefixHeader-NotesApp.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrefixHeader-NotesApp.pch"; sourceTree = "<group>"; };
+		41ED8D991B922EE1005FE666 /* NoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteModel.h; sourceTree = "<group>"; };
+		41ED8D9A1B922EE1005FE666 /* NoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteModel.m; sourceTree = "<group>"; };
+		5E49C018984927E4CB98F0E4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B177C21243AE916A4260263 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E0761D510B2984EDDF781528 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB438F60666C5AC33CC6DE8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +78,8 @@
 				41ED8D631B922866005FE666 /* NotesApp */,
 				41ED8D801B922867005FE666 /* NotesAppTests */,
 				41ED8D621B922866005FE666 /* Products */,
+				DC719F4BCA70D7B1ABA712C4 /* Pods */,
+				6E8745EA27CDF4C89BE442FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +95,7 @@
 		41ED8D631B922866005FE666 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
+				41ED8D981B922EAC005FE666 /* Models */,
 				41ED8D681B922866005FE666 /* AppDelegate.h */,
 				41ED8D691B922866005FE666 /* AppDelegate.m */,
 				41ED8D6B1B922866005FE666 /* MasterViewController.h */,
@@ -103,6 +115,7 @@
 			children = (
 				41ED8D651B922866005FE666 /* Info.plist */,
 				41ED8D661B922866005FE666 /* main.m */,
+				41ED8D911B922CC9005FE666 /* PrefixHeader-NotesApp.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -124,6 +137,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		41ED8D981B922EAC005FE666 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				41ED8D991B922EE1005FE666 /* NoteModel.h */,
+				41ED8D9A1B922EE1005FE666 /* NoteModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6E8745EA27CDF4C89BE442FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E49C018984927E4CB98F0E4 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC719F4BCA70D7B1ABA712C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0761D510B2984EDDF781528 /* Pods.debug.xcconfig */,
+				9B177C21243AE916A4260263 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41ED8D871B922867005FE666 /* Build configuration list for PBXNativeTarget "NotesApp" */;
 			buildPhases = (
+				6F5915C786E47CC1A0905B63 /* Check Pods Manifest.lock */,
 				41ED8D5D1B922866005FE666 /* Sources */,
 				41ED8D5E1B922866005FE666 /* Frameworks */,
 				41ED8D5F1B922866005FE666 /* Resources */,
+				07004805FB8CA81C28E5428E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,12 +260,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07004805FB8CA81C28E5428E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F5915C786E47CC1A0905B63 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		41ED8D5D1B922866005FE666 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				41ED8D6A1B922866005FE666 /* AppDelegate.m in Sources */,
+				41ED8D9B1B922EE1005FE666 /* NoteModel.m in Sources */,
 				41ED8D6D1B922866005FE666 /* MasterViewController.m in Sources */,
 				41ED8D671B922866005FE666 /* main.m in Sources */,
 				41ED8D701B922866005FE666 /* DetailViewController.m in Sources */,
@@ -353,8 +428,10 @@
 		};
 		41ED8D881B922867005FE666 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0761D510B2984EDDF781528 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "NotesApp/PrefixHeader-NotesApp.pch";
 				INFOPLIST_FILE = NotesApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -363,8 +440,10 @@
 		};
 		41ED8D891B922867005FE666 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B177C21243AE916A4260263 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "NotesApp/PrefixHeader-NotesApp.pch";
 				INFOPLIST_FILE = NotesApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,6 +503,7 @@
 				41ED8D891B922867005FE666 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41ED8D8A1B922867005FE666 /* Build configuration list for PBXNativeTarget "NotesAppTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +512,7 @@
 				41ED8D8C1B922867005FE666 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

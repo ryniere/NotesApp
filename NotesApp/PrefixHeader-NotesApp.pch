@@ -14,5 +14,6 @@
 
 #import <Realm/Realm.h>
 #import "NoteManager.h"
+#import "UIColor+Hex.h"
 
 #endif

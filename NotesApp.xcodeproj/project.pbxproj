@@ -18,6 +18,8 @@
 		41ED8D841B922867005FE666 /* NotesAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8D831B922867005FE666 /* NotesAppTests.m */; };
 		41ED8D9B1B922EE1005FE666 /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8D9A1B922EE1005FE666 /* NoteModel.m */; };
 		41ED8D9F1B923FA9005FE666 /* NoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8D9E1B923FA9005FE666 /* NoteManager.m */; };
+		41ED8DA31B926D32005FE666 /* NoteSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8DA21B926D32005FE666 /* NoteSettingsViewController.m */; };
+		41ED8DA61B92738D005FE666 /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED8DA51B92738D005FE666 /* ColorPickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		41ED8D9A1B922EE1005FE666 /* NoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteModel.m; sourceTree = "<group>"; };
 		41ED8D9D1B923FA9005FE666 /* NoteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteManager.h; sourceTree = "<group>"; };
 		41ED8D9E1B923FA9005FE666 /* NoteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteManager.m; sourceTree = "<group>"; };
+		41ED8DA11B926D32005FE666 /* NoteSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteSettingsViewController.h; sourceTree = "<group>"; };
+		41ED8DA21B926D32005FE666 /* NoteSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteSettingsViewController.m; sourceTree = "<group>"; };
+		41ED8DA41B92738D005FE666 /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
+		41ED8DA51B92738D005FE666 /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
 		5E49C018984927E4CB98F0E4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B177C21243AE916A4260263 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E0761D510B2984EDDF781528 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,10 +108,7 @@
 				41ED8D981B922EAC005FE666 /* Models */,
 				41ED8D681B922866005FE666 /* AppDelegate.h */,
 				41ED8D691B922866005FE666 /* AppDelegate.m */,
-				41ED8D6B1B922866005FE666 /* MasterViewController.h */,
-				41ED8D6C1B922866005FE666 /* MasterViewController.m */,
-				41ED8D6E1B922866005FE666 /* DetailViewController.h */,
-				41ED8D6F1B922866005FE666 /* DetailViewController.m */,
+				41ED8DA01B926BBC005FE666 /* Controllers */,
 				41ED8D711B922866005FE666 /* Main.storyboard */,
 				41ED8D741B922866005FE666 /* Images.xcassets */,
 				41ED8D761B922866005FE666 /* LaunchScreen.xib */,
@@ -158,6 +161,21 @@
 			);
 			name = DataManager;
 			path = DataManagement;
+			sourceTree = "<group>";
+		};
+		41ED8DA01B926BBC005FE666 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				41ED8D6B1B922866005FE666 /* MasterViewController.h */,
+				41ED8D6C1B922866005FE666 /* MasterViewController.m */,
+				41ED8D6E1B922866005FE666 /* DetailViewController.h */,
+				41ED8D6F1B922866005FE666 /* DetailViewController.m */,
+				41ED8DA11B926D32005FE666 /* NoteSettingsViewController.h */,
+				41ED8DA21B926D32005FE666 /* NoteSettingsViewController.m */,
+				41ED8DA41B92738D005FE666 /* ColorPickerViewController.h */,
+				41ED8DA51B92738D005FE666 /* ColorPickerViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		6E8745EA27CDF4C89BE442FC /* Frameworks */ = {
@@ -314,8 +332,10 @@
 			files = (
 				41ED8D6A1B922866005FE666 /* AppDelegate.m in Sources */,
 				41ED8D9F1B923FA9005FE666 /* NoteManager.m in Sources */,
+				41ED8DA61B92738D005FE666 /* ColorPickerViewController.m in Sources */,
 				41ED8D9B1B922EE1005FE666 /* NoteModel.m in Sources */,
 				41ED8D6D1B922866005FE666 /* MasterViewController.m in Sources */,
+				41ED8DA31B926D32005FE666 /* NoteSettingsViewController.m in Sources */,
 				41ED8D671B922866005FE666 /* main.m in Sources */,
 				41ED8D701B922866005FE666 /* DetailViewController.m in Sources */,
 			);

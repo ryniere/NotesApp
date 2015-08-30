@@ -35,6 +35,12 @@
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -78,7 +84,13 @@
 
     NoteModel *note = [[NoteManager sharedManager] getNoteAtIndex:indexPath.row];
     
-    cell.textLabel.text = [note.createdAt description];
+    if (![note.text isEqualToString:@""]) {
+        cell.textLabel.text = note.text;
+    }
+    else{
+        cell.textLabel.text = @"New Note";
+    }
+    
     return cell;
 }
 

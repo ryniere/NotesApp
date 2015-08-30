@@ -27,7 +27,11 @@
 }
 
 + (NSDictionary *)defaultPropertyValues {
-    return @{@"textFont" : @"", @"textColor": @"", @"backgroundColor": @"", @"text": @""};
+    return @{@"textFont" : @"",
+             @"textColor": @"#000000",
+             @"backgroundColor": @"#ffffff",
+             @"text": @""
+            };
 }
 
 -(NSDate *) createdAt{

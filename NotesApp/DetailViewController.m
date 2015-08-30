@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "NoteSettingsViewController.h"
 
 @interface DetailViewController ()
 
@@ -28,8 +29,9 @@
 
 - (void)configureView {
     // Update the user interface for the detail item.
+    self.noteTextView.delegate = self;
     if (self.note) {
-        self.noteTextView.text = [self.note.createdAt description];
+        self.noteTextView.text = self.note.text;
     }
 }
 
@@ -39,9 +41,31 @@
     [self configureView];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.view setBackgroundColor:[UIColor colorWithCSS:self.note.backgroundColor]];
+    self.noteTextView.textColor = [UIColor colorWithCSS:self.note.textColor];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma TextView Delegate
+- (void)textViewDidChange:(UITextView *)textView{
+
+    [[NoteManager sharedManager] updateNote:self.note withText:textView.text];
+    
+}
+- (IBAction)openSettings:(id)sender {
+    
+    UIStoryboard *storybrd = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NoteSettingsViewController *noteSettings = [storybrd instantiateViewControllerWithIdentifier:@"NoteSettingsViewController"];
+    noteSettings.note = self.note;
+    
+    [[self navigationController] pushViewController:noteSettings animated:true];
 }
 
 @end

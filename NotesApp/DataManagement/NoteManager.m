@@ -27,11 +27,35 @@
 }
 
 - (void) addNote:(NoteModel *) note{
-    // Get the default Realm
     
     // Add to Realm with transaction
     [self.realm beginWriteTransaction];
     [self.realm addObject:note];
+    [self.realm commitWriteTransaction];
+    
+}
+
+- (void) updateNote:(NoteModel *)note withText:(NSString *) text{
+    
+    [self.realm beginWriteTransaction];
+    note.text = text;
+    note.updatedAt = [NSDate date];
+    [self.realm commitWriteTransaction];
+}
+
+- (void) updateNote:(NoteModel *)note withBackgroundColor:(NSString *) color{
+    
+    [self.realm beginWriteTransaction];
+    note.backgroundColor = color;
+    note.updatedAt = [NSDate date];
+    [self.realm commitWriteTransaction];
+    
+}
+- (void) updateNote:(NoteModel *)note withTextColor:(NSString *) color{
+    
+    [self.realm beginWriteTransaction];
+    note.textColor = color;
+    note.updatedAt = [NSDate date];
     [self.realm commitWriteTransaction];
     
 }

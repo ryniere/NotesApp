@@ -15,6 +15,9 @@
 
 
 - (void) addNote:(NoteModel *) note;
+- (void) updateNote:(NoteModel *)note withText:(NSString *) text;
+- (void) updateNote:(NoteModel *)note withBackgroundColor:(NSString *) color;
+- (void) updateNote:(NoteModel *)note withTextColor:(NSString *) color;
 - (NoteModel *) getNoteAtIndex:(NSInteger)index;
 - (void) removeNoteAtIndex:(NSInteger)index;
 - (RLMResults *) getNotes;

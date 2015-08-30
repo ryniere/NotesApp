@@ -11,11 +11,11 @@
 
 @interface NoteModel : RLMObject
 
-@property UIFont *textFont;
-@property UIColor *textColor;
-@property UIColor *backgroundColor;
+@property NSString *textFont;
+@property NSString *textColor;
+@property NSString *backgroundColor;
 @property NSString *text;
-@property NSDate *createdAt;
+@property (readonly) NSDate *createdAt;
 @property NSDate *updatedAt;
 
 @end

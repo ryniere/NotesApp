@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  NoteSettingsViewController.h
 //  NotesApp
 //
 //  Created by Ryniere S Silva on 29/08/15.
@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ColorPickerViewController.h"
 #import "NoteModel.h"
 
-@interface DetailViewController : UIViewController<UITextViewDelegate>
+@interface NoteSettingsViewController : UIViewController<ColorPickerViewControllerDelegate>
 
 @property (strong,nonatomic) NoteModel *note;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end
-

@@ -7,18 +7,20 @@
 //
 
 #import "DetailViewController.h"
+#import "NoteSettingsViewController.h"
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextView *noteTextView;
 @end
 
 @implementation DetailViewController
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+- (void)setDetailItem:(NoteModel *)newNote {
+    if (_note != newNote) {
+        _note = newNote;
             
         // Update the view.
         [self configureView];
@@ -27,8 +29,9 @@
 
 - (void)configureView {
     // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    self.noteTextView.delegate = self;
+    if (self.note) {
+        self.noteTextView.text = self.note.text;
     }
 }
 
@@ -38,9 +41,31 @@
     [self configureView];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.view setBackgroundColor:[UIColor colorWithCSS:self.note.backgroundColor]];
+    self.noteTextView.textColor = [UIColor colorWithCSS:self.note.textColor];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma TextView Delegate
+- (void)textViewDidChange:(UITextView *)textView{
+
+    [[NoteManager sharedManager] updateNote:self.note withText:textView.text];
+    
+}
+- (IBAction)openSettings:(id)sender {
+    
+    UIStoryboard *storybrd = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NoteSettingsViewController *noteSettings = [storybrd instantiateViewControllerWithIdentifier:@"NoteSettingsViewController"];
+    noteSettings.note = self.note;
+    
+    [[self navigationController] pushViewController:noteSettings animated:true];
 }
 
 @end

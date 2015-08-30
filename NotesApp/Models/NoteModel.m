@@ -8,6 +8,34 @@
 
 #import "NoteModel.h"
 
+@interface NoteModel()
+
+@property NSDate *initialDate;
+
+@end
+
 @implementation NoteModel
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.initialDate = [NSDate date];
+        self.updatedAt = self.initialDate;
+    }
+    return self;
+}
+
++ (NSDictionary *)defaultPropertyValues {
+    return @{@"textFont" : @"",
+             @"textColor": @"#000000",
+             @"backgroundColor": @"#ffffff",
+             @"text": @""
+            };
+}
+
+-(NSDate *) createdAt{
+    return self.initialDate;
+}
 
 @end

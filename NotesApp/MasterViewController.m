@@ -83,7 +83,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     NoteModel *note = [[NoteManager sharedManager] getNoteAtIndex:indexPath.row];
-    
+    cell.textLabel.font = [UIFont fontWithName:note.textFont size:14];
     if (![note.text isEqualToString:@""]) {
         cell.textLabel.text = note.text;
     }

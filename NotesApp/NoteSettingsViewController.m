@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *fontColorButton;
 @property (weak, nonatomic) IBOutlet UIButton *backgroundColorButton;
 @property (strong, nonatomic)  ColorPickerViewController *colorPickerView;
+@property (weak, nonatomic) IBOutlet UITextField *textSizeField;
 
 @end
 
@@ -22,6 +23,7 @@ bool isFontColor;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.textSizeField.delegate = self;
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -29,6 +31,14 @@ bool isFontColor;
     
     self.fontColorButton.backgroundColor = [UIColor colorWithCSS:self.note.textColor];
     self.backgroundColorButton.backgroundColor = [UIColor colorWithCSS:self.note.backgroundColor];
+    self.textSizeField.text = [NSString stringWithFormat:@"%ld", (long)self.note.textSize];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self changeTextSize:self.textSizeField];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,6 +54,22 @@ bool isFontColor;
     else{
         [[NoteManager sharedManager] updateNote:self.note withBackgroundColor:[color cssString]];
     }
+    
+}
+
+- (void)changeTextSize:(UITextField *)textField {
+    NSString *textSizeStr = textField.text;
+    
+    NSInteger textSize = [textSizeStr integerValue];
+    
+    if (textSize > 0 && textSize < 50) {
+        [[NoteManager sharedManager] updateNote:self.note withFontSize:textSize];
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    [self changeTextSize:textField];
     
 }
 
@@ -79,7 +105,6 @@ bool isFontColor;
     isFontColor = false;
     [self openColorPickerView];
 }
-
 
 
 @end

@@ -60,6 +60,24 @@
     
 }
 
+- (void) updateNote:(NoteModel *)note withTextFont:(NSString *) fontName{
+    
+    [self.realm beginWriteTransaction];
+    note.textFont = fontName;
+    note.updatedAt = [NSDate date];
+    [self.realm commitWriteTransaction];
+    
+}
+
+- (void) updateNote:(NoteModel *)note withFontSize:(NSInteger) fontSize{
+    
+    [self.realm beginWriteTransaction];
+    note.textSize = fontSize;
+    note.updatedAt = [NSDate date];
+    [self.realm commitWriteTransaction];
+    
+}
+
 
 - (void) removeNoteAtIndex:(NSInteger)index{
     

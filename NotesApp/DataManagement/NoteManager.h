@@ -18,6 +18,8 @@
 - (void) updateNote:(NoteModel *)note withText:(NSString *) text;
 - (void) updateNote:(NoteModel *)note withBackgroundColor:(NSString *) color;
 - (void) updateNote:(NoteModel *)note withTextColor:(NSString *) color;
+- (void) updateNote:(NoteModel *)note withTextFont:(NSString *) fontName;
+- (void) updateNote:(NoteModel *)note withFontSize:(NSInteger) fontSize;
 - (NoteModel *) getNoteAtIndex:(NSInteger)index;
 - (void) removeNoteAtIndex:(NSInteger)index;
 - (RLMResults *) getNotes;

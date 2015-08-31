@@ -12,6 +12,7 @@
 @interface NoteModel : RLMObject
 
 @property NSString *textFont;
+@property NSInteger textSize;
 @property NSString *textColor;
 @property NSString *backgroundColor;
 @property NSString *text;

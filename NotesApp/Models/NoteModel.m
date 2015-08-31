@@ -27,7 +27,8 @@
 }
 
 + (NSDictionary *)defaultPropertyValues {
-    return @{@"textFont" : @"",
+    return @{@"textFont" : @"Arial",
+             @"textSize" : @14,
              @"textColor": @"#000000",
              @"backgroundColor": @"#ffffff",
              @"text": @""

@@ -10,7 +10,7 @@
 #import "ColorPickerViewController.h"
 #import "NoteModel.h"
 
-@interface NoteSettingsViewController : UIViewController<ColorPickerViewControllerDelegate>
+@interface NoteSettingsViewController : UIViewController<ColorPickerViewControllerDelegate, UITextFieldDelegate>
 
 @property (strong,nonatomic) NoteModel *note;
 

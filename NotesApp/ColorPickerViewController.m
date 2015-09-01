@@ -34,10 +34,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.colorPickerView.color = _color;
     [self.colorPickerView addTarget:self
                              action:@selector(colorDidChange:)
                    forControlEvents:UIControlEventValueChanged];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+     self.colorPickerView.color = _color;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

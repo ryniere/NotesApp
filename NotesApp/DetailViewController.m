@@ -46,6 +46,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (UIView *view in self.view.subviews) {
+        
+        if ([view isKindOfClass:[UILabel class]]){
+            [array addObject:view];
+        }
+        
+    }
+    
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     self.noteTextView = [[UITextView alloc] initWithFrame:frame];
     self.noteTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
